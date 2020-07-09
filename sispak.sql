@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jul 2020 pada 14.00
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.2.27
+-- Host: localhost:3306
+-- Generation Time: Jul 09, 2020 at 11:34 AM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_admin`
+-- Table structure for table `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -34,7 +33,7 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_admin`
+-- Dumping data for table `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`username`, `password`) VALUES
@@ -43,7 +42,7 @@ INSERT INTO `tb_admin` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kesimpulan`
+-- Table structure for table `tb_kesimpulan`
 --
 
 CREATE TABLE `tb_kesimpulan` (
@@ -55,7 +54,7 @@ CREATE TABLE `tb_kesimpulan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_kesimpulan`
+-- Dumping data for table `tb_kesimpulan`
 --
 
 INSERT INTO `tb_kesimpulan` (`kode_kesimpulan`, `solusi`, `fakta`, `oleh`, `status`) VALUES
@@ -207,54 +206,55 @@ INSERT INTO `tb_kesimpulan` (`kode_kesimpulan`, `solusi`, `fakta`, `oleh`, `stat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pertanyaan`
+-- Table structure for table `tb_pertanyaan`
 --
 
 CREATE TABLE `tb_pertanyaan` (
   `kode_pertanyaan` varchar(50) NOT NULL,
-  `isi_pertanyaan` varchar(200) NOT NULL
+  `isi_pertanyaan` varchar(200) NOT NULL,
+  `skala` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_pertanyaan`
+-- Dumping data for table `tb_pertanyaan`
 --
 
-INSERT INTO `tb_pertanyaan` (`kode_pertanyaan`, `isi_pertanyaan`) VALUES
-('m1', 'Anak memusatkan perhatian dalam jangka waktu tertentu'),
-('m10-a', 'Apakah anak melakukan dua perintah secara sederhana'),
-('m10-b', 'Apakah Anak Mengulang kembali kalimat sederhana.'),
-('m11-a', 'Apakah Anak Menjawab pertanyaan tentang informasi/kejadian secara sederhana'),
-('m11-b', 'Apakah Anak Dapat Menceritakan kembali cerita/dongeng yang pernah didengar'),
-('m12-a', 'Apakah anak sudah dapat berdo’a dengan tertib '),
-('m12-b', 'Apakah anak dapat menirukan gerakan beribadah'),
-('m13-a', 'Apakah anak biasa berdo’a sebelum dan sesudah belajar'),
-('m13-b', 'Anak terbiasa berdo’a ketika keluar rumah'),
-('m14', 'Apakah anak sering melafadzkan do’a untuk kedua orang tua'),
-('m15', 'Apakah anak dapat menyebutkan macam-macam tanaman dan binatang'),
-('m16', '\r\nApakah anak mengenal lingkungan sekitar (rumah)'),
-('m17', '\r\nApakah anak dapat Menyebutkan bagian-bagian pohon'),
-('m18', 'Apakah anak terbiasa membuang sampah pada tempatnya'),
-('m19', 'Apakah anak terbiasa memelihara kebersihan lingkungan'),
-('m2', 'Apakah anak tidak mengganggu teman?'),
-('m3-a', 'Apakah anak sering mengucapkan salam dan membalas salam.'),
-('m3-b', 'Apakah anak biasa membantu teman dengan senang hati'),
-('m4-a', 'Apakah anak terbiasa bergantian menggunakan barang'),
-('m4-b', 'Apakah anak terbiasa menghargai hasil karya teman'),
-('m5-a', 'Apakah anak mau meminjamkan barang ke teman'),
-('m5-b', 'Apakah anak mengerjakan tugas sendiri dan sampai selesai'),
-('m6-a', 'Apakah anak terbiasa sabar menunggu giliran'),
-('m6-b', 'Apakah anak menunjukkan kebanggaan terhadap hasil kerjanya'),
-('m7-a', 'Apakah anak terbiasa mengembalikan mainan pada tempatnya. '),
-('m7-b', 'Apakah tertarik dengan konstruksi bangunan ?'),
-('m8-a', 'Apakah tertarik dengan ilmu bisnis ?'),
-('m8-b', 'Apakah tertarik dengan ilmu bisnis ?'),
-('m9-a', 'Apakah senang belajar tentang pembukuan keuangan ?'),
-('m9-b', 'Apakah senang belajar tentang pembukuan keuangan ?');
+INSERT INTO `tb_pertanyaan` (`kode_pertanyaan`, `isi_pertanyaan`, `skala`) VALUES
+('m1', 'Anak memusatkan perhatian dalam jangka waktu tertentu', 4),
+('m10-a', 'Apakah anak melakukan dua perintah secara sederhana', 4),
+('m10-b', 'Apakah Anak Mengulang kembali kalimat sederhana.', 4),
+('m11-a', 'Apakah Anak Menjawab pertanyaan tentang informasi/kejadian secara sederhana', 4),
+('m11-b', 'Apakah Anak Dapat Menceritakan kembali cerita/dongeng yang pernah didengar', 4),
+('m12-a', 'Apakah anak sudah dapat berdo’a dengan tertib ', 4),
+('m12-b', 'Apakah anak dapat menirukan gerakan beribadah', 4),
+('m13-a', 'Apakah anak biasa berdo’a sebelum dan sesudah belajar', 4),
+('m13-b', 'Anak terbiasa berdo’a ketika keluar rumah', 4),
+('m14', 'Apakah anak sering melafadzkan do’a untuk kedua orang tua', 4),
+('m15', 'Apakah anak dapat menyebutkan macam-macam tanaman dan binatang', 4),
+('m16', '\r\nApakah anak mengenal lingkungan sekitar (rumah)', 4),
+('m17', '\r\nApakah anak dapat Menyebutkan bagian-bagian pohon', 4),
+('m18', 'Apakah anak terbiasa membuang sampah pada tempatnya', 4),
+('m19', 'Apakah anak terbiasa memelihara kebersihan lingkungan', 4),
+('m2', 'Apakah anak tidak mengganggu teman?', 4),
+('m3-a', 'Apakah anak sering mengucapkan salam dan membalas salam.', 4),
+('m3-b', 'Apakah anak biasa membantu teman dengan senang hati', 4),
+('m4-a', 'Apakah anak terbiasa bergantian menggunakan barang', 4),
+('m4-b', 'Apakah anak terbiasa menghargai hasil karya teman', 4),
+('m5-a', 'Apakah anak mau meminjamkan barang ke teman', 4),
+('m5-b', 'Apakah anak mengerjakan tugas sendiri dan sampai selesai', 4),
+('m6-a', 'Apakah anak terbiasa sabar menunggu giliran', 4),
+('m6-b', 'Apakah anak menunjukkan kebanggaan terhadap hasil kerjanya', 4),
+('m7-a', 'Apakah anak terbiasa mengembalikan mainan pada tempatnya. ', 4),
+('m7-b', 'Apakah tertarik dengan konstruksi bangunan ?', 4),
+('m8-a', 'Apakah tertarik dengan ilmu bisnis ?', 4),
+('m8-b', 'Apakah tertarik dengan ilmu bisnis ?', 4),
+('m9-a', 'Apakah senang belajar tentang pembukuan keuangan ?', 4),
+('m9-b', 'Apakah senang belajar tentang pembukuan keuangan ?', 4);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_solusi`
+-- Table structure for table `tb_solusi`
 --
 
 CREATE TABLE `tb_solusi` (
@@ -263,7 +263,7 @@ CREATE TABLE `tb_solusi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_solusi`
+-- Dumping data for table `tb_solusi`
 --
 
 INSERT INTO `tb_solusi` (`kode_solusi`, `isi_solusi`) VALUES
@@ -302,7 +302,7 @@ INSERT INTO `tb_solusi` (`kode_solusi`, `isi_solusi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user_temp`
+-- Table structure for table `tb_user_temp`
 --
 
 CREATE TABLE `tb_user_temp` (
@@ -315,7 +315,7 @@ CREATE TABLE `tb_user_temp` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_user`
+-- Table structure for table `t_user`
 --
 
 CREATE TABLE `t_user` (
@@ -330,41 +330,41 @@ CREATE TABLE `t_user` (
 --
 
 --
--- Indeks untuk tabel `tb_kesimpulan`
+-- Indexes for table `tb_kesimpulan`
 --
 ALTER TABLE `tb_kesimpulan`
   ADD PRIMARY KEY (`kode_kesimpulan`);
 
 --
--- Indeks untuk tabel `tb_pertanyaan`
+-- Indexes for table `tb_pertanyaan`
 --
 ALTER TABLE `tb_pertanyaan`
   ADD PRIMARY KEY (`kode_pertanyaan`);
 
 --
--- Indeks untuk tabel `tb_solusi`
+-- Indexes for table `tb_solusi`
 --
 ALTER TABLE `tb_solusi`
   ADD PRIMARY KEY (`kode_solusi`);
 
 --
--- Indeks untuk tabel `t_user`
+-- Indexes for table `t_user`
 --
 ALTER TABLE `t_user`
   ADD PRIMARY KEY (`ID_User`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kesimpulan`
+-- AUTO_INCREMENT for table `tb_kesimpulan`
 --
 ALTER TABLE `tb_kesimpulan`
   MODIFY `kode_kesimpulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
--- AUTO_INCREMENT untuk tabel `t_user`
+-- AUTO_INCREMENT for table `t_user`
 --
 ALTER TABLE `t_user`
   MODIFY `ID_User` int(100) NOT NULL AUTO_INCREMENT;
