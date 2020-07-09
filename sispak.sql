@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2018 at 01:48 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Waktu pembuatan: 07 Jul 2020 pada 14.00
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_admin`
+-- Struktur dari tabel `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_admin`
+-- Dumping data untuk tabel `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `tb_admin` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kesimpulan`
+-- Struktur dari tabel `tb_kesimpulan`
 --
 
 CREATE TABLE `tb_kesimpulan` (
@@ -55,7 +55,7 @@ CREATE TABLE `tb_kesimpulan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kesimpulan`
+-- Dumping data untuk tabel `tb_kesimpulan`
 --
 
 INSERT INTO `tb_kesimpulan` (`kode_kesimpulan`, `solusi`, `fakta`, `oleh`, `status`) VALUES
@@ -200,12 +200,14 @@ INSERT INTO `tb_kesimpulan` (`kode_kesimpulan`, `solusi`, `fakta`, `oleh`, `stat
 (139, 'Manajemen (non SMA)', 'Jurusan asal bukan teknik bangunan dan perancangan produk', 'pakar', 'setuju'),
 (140, 'Manajemen (non SMA)', 'Jurusan asal bukan bidang teknologi informasi dan komunikasi', 'pakar', 'setuju'),
 (141, 'Manajemen (non SMA)', 'Jurusan asal adalah bidang bisnis dan manajemen', 'pakar', 'setuju'),
-(142, 'Manajemen (non SMA)', 'Tidak Konsentrasi pada akuntansi', 'pakar', 'setuju');
+(142, 'Manajemen (non SMA)', 'Tidak Konsentrasi pada akuntansi', 'pakar', 'setuju'),
+(151, 'Teologi', 'vhjvhjv', 'pakar', 'setuju'),
+(152, 'Informatika', 'jkbkj', 'pakar', 'setuju');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pertanyaan`
+-- Struktur dari tabel `tb_pertanyaan`
 --
 
 CREATE TABLE `tb_pertanyaan` (
@@ -214,35 +216,35 @@ CREATE TABLE `tb_pertanyaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_pertanyaan`
+-- Dumping data untuk tabel `tb_pertanyaan`
 --
 
 INSERT INTO `tb_pertanyaan` (`kode_pertanyaan`, `isi_pertanyaan`) VALUES
-('m1', 'Apakah berasal dari SMA ?'),
-('m10-a', 'Apakah tertarik dengan ilmu biologi ? '),
-('m10-b', 'Apakah tertarik dengan ilmu biologi ? '),
-('m11-a', 'Apakah Anda ingin belajar tentang kesehatan dan penyembuhan ?'),
-('m11-b', 'Apakah Anda ingin belajar tentang kesehatan dan penyembuhan ?'),
-('m12-a', 'Apakah Anda ingin mendalami tentang agama Kristen ?'),
-('m12-b', 'Apakah Anda ingin mendalami tentang agama Kristen ?'),
-('m13-a', 'Apakah Anda gemar berbahasa Inggris ?'),
-('m13-b', 'Apakah Anda gemar berbahasa Inggris ?'),
-('m14', 'Apakah jurusan asal Anda adalah teknik bangunan dan perancangan produk ?'),
-('m15', 'Apakah konsentrasi Anda adalah teknik bangunan ?'),
-('m16', '\r\nApakah jurusan asal Anda adalah bidang teknologi informasi dan komunikasi ?'),
-('m17', '\r\nApakah konsentrasi penjurusan adalah teknik komputer dan jaringan ?'),
-('m18', 'Apakah jurusan asal adalah bidang bisnis dan manajemen ?'),
-('m19', 'Apakah konsentrasi jurusan Anda adalah Akuntansi ?'),
-('m2', 'Apakah mengambil jurusan IPA ?'),
-('m3-a', 'Apakah tertarik masuk teknik ?'),
-('m3-b', 'Apakah tertarik masuk teknik ?'),
-('m4-a', 'Apakah rata-rata nilai matematika, bahasa inggris, kimia, fisika, biologi kelas 10 dan kelas 11 adalah >= 75 ?'),
-('m4-b', 'Apakah rata-rata nilai matematika, bahasa inggris, kimia, fisika, biologi kelas 10 dan kelas 11 adalah >= 75 ?'),
-('m5-a', 'Apakah tertarik dengan hal-hal yang berkaitan dengan komputer ?'),
-('m5-b', 'Apakah tertarik dengan hal-hal yang berkaitan dengan komputer ?'),
-('m6-a', 'Apakah ingin mempelajari komputasi yang lebih dalam ?'),
-('m6-b', 'Apakah ingin mempelajari komputasi yang lebih dalam ?'),
-('m7-a', 'Apakah tertarik dengan konstruksi bangunan ?'),
+('m1', 'Anak memusatkan perhatian dalam jangka waktu tertentu'),
+('m10-a', 'Apakah anak melakukan dua perintah secara sederhana'),
+('m10-b', 'Apakah Anak Mengulang kembali kalimat sederhana.'),
+('m11-a', 'Apakah Anak Menjawab pertanyaan tentang informasi/kejadian secara sederhana'),
+('m11-b', 'Apakah Anak Dapat Menceritakan kembali cerita/dongeng yang pernah didengar'),
+('m12-a', 'Apakah anak sudah dapat berdo’a dengan tertib '),
+('m12-b', 'Apakah anak dapat menirukan gerakan beribadah'),
+('m13-a', 'Apakah anak biasa berdo’a sebelum dan sesudah belajar'),
+('m13-b', 'Anak terbiasa berdo’a ketika keluar rumah'),
+('m14', 'Apakah anak sering melafadzkan do’a untuk kedua orang tua'),
+('m15', 'Apakah anak dapat menyebutkan macam-macam tanaman dan binatang'),
+('m16', '\r\nApakah anak mengenal lingkungan sekitar (rumah)'),
+('m17', '\r\nApakah anak dapat Menyebutkan bagian-bagian pohon'),
+('m18', 'Apakah anak terbiasa membuang sampah pada tempatnya'),
+('m19', 'Apakah anak terbiasa memelihara kebersihan lingkungan'),
+('m2', 'Apakah anak tidak mengganggu teman?'),
+('m3-a', 'Apakah anak sering mengucapkan salam dan membalas salam.'),
+('m3-b', 'Apakah anak biasa membantu teman dengan senang hati'),
+('m4-a', 'Apakah anak terbiasa bergantian menggunakan barang'),
+('m4-b', 'Apakah anak terbiasa menghargai hasil karya teman'),
+('m5-a', 'Apakah anak mau meminjamkan barang ke teman'),
+('m5-b', 'Apakah anak mengerjakan tugas sendiri dan sampai selesai'),
+('m6-a', 'Apakah anak terbiasa sabar menunggu giliran'),
+('m6-b', 'Apakah anak menunjukkan kebanggaan terhadap hasil kerjanya'),
+('m7-a', 'Apakah anak terbiasa mengembalikan mainan pada tempatnya. '),
 ('m7-b', 'Apakah tertarik dengan konstruksi bangunan ?'),
 ('m8-a', 'Apakah tertarik dengan ilmu bisnis ?'),
 ('m8-b', 'Apakah tertarik dengan ilmu bisnis ?'),
@@ -252,7 +254,7 @@ INSERT INTO `tb_pertanyaan` (`kode_pertanyaan`, `isi_pertanyaan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_solusi`
+-- Struktur dari tabel `tb_solusi`
 --
 
 CREATE TABLE `tb_solusi` (
@@ -261,7 +263,7 @@ CREATE TABLE `tb_solusi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_solusi`
+-- Dumping data untuk tabel `tb_solusi`
 --
 
 INSERT INTO `tb_solusi` (`kode_solusi`, `isi_solusi`) VALUES
@@ -297,37 +299,75 @@ INSERT INTO `tb_solusi` (`kode_solusi`, `isi_solusi`) VALUES
 ('S8', 'Bioteknologi'),
 ('S9', 'Teologi');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_user_temp`
+--
+
+CREATE TABLE `tb_user_temp` (
+  `No` int(100) NOT NULL,
+  `ID_User` int(100) NOT NULL,
+  `ID_Pertanyaan` int(100) NOT NULL,
+  `Skala_Temp` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `t_user`
+--
+
+CREATE TABLE `t_user` (
+  `ID_User` int(100) NOT NULL,
+  `Nama_User` varchar(150) NOT NULL,
+  `Umur` int(10) NOT NULL,
+  `Skala_Hasil` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tb_kesimpulan`
+-- Indeks untuk tabel `tb_kesimpulan`
 --
 ALTER TABLE `tb_kesimpulan`
   ADD PRIMARY KEY (`kode_kesimpulan`);
 
 --
--- Indexes for table `tb_pertanyaan`
+-- Indeks untuk tabel `tb_pertanyaan`
 --
 ALTER TABLE `tb_pertanyaan`
   ADD PRIMARY KEY (`kode_pertanyaan`);
 
 --
--- Indexes for table `tb_solusi`
+-- Indeks untuk tabel `tb_solusi`
 --
 ALTER TABLE `tb_solusi`
   ADD PRIMARY KEY (`kode_solusi`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `t_user`
+--
+ALTER TABLE `t_user`
+  ADD PRIMARY KEY (`ID_User`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_kesimpulan`
+-- AUTO_INCREMENT untuk tabel `tb_kesimpulan`
 --
 ALTER TABLE `tb_kesimpulan`
-  MODIFY `kode_kesimpulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `kode_kesimpulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+
+--
+-- AUTO_INCREMENT untuk tabel `t_user`
+--
+ALTER TABLE `t_user`
+  MODIFY `ID_User` int(100) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

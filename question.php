@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['nama'])) {
+    header('location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -30,7 +36,6 @@
                     <?php
                     include('koneksi.php');
                     $kode = 'm1';
-                    session_start();
                     echo "<p>Hai, " . $_SESSION['nama'] . " (" . $_SESSION['umur'] . " th)</p>";
 
                     if (isset($_GET['kode'])) {
@@ -40,6 +45,9 @@
                     $sql = "SELECT * from tb_pertanyaan WHERE kode_pertanyaan='$kode'";
                     $data = mysqli_query($connect, $sql);
                     $row = mysqli_fetch_assoc($data);
+
+                    $_SESSION['skala'] = (int) $_SESSION['skala'] + $row['skala'];
+                    $_SESSION['hitung_tanya'] = (int) $_SESSION['hitung_tanya'] + 1;
                     ?>
 
                     <label for="exampleFormControlInput1"><?php echo $row['isi_pertanyaan']; ?></label>
